@@ -1,72 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML小遊戲練習v2.0</title>
+	<title>Homepage</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script type="text/javascript">
-/*
-小遊戲練習v.HPBD
-Date: 2020/05/27
-Author: 鄭宇彤
-*/
-var start,timer,btn,prgs,count,win,prgsNum;
-var Str,len;
-function init(){
-	Str="Happy Birthday to You!!!";
-	len=Str.length;
-	//alert('The hidden message will be: \n"'+Str+'"\nIt is '+String(len)+" character(s) long.");
-	alert("Ready...Set...GO!!!\nClose the block to start the game.");
-	
-	startGame();
-}
-function startGame(){
-	timer=document.getElementById("timer");
-	window.setTimeout(countdown,1000);
-	
-	count=0; win=false;
-	btn=document.getElementById("btn");
-	prgs=document.getElementById("prgs");
-	prgsNum=document.getElementById("prgsNum");
-	var handler=function(){
-		if(count<len) {
-			prgs.innerHTML+=Str[count];
-			prgsNum.innerHTML++;
-			count++;
-			if(count==len) {win=true; countdown;}
-		}
-	}
-	btn.addEventListener("click",handler);
-}
-function countdown(){
-		if(win) alert("Congratulations, you WIN!!!\nPress F5 to play again.");
-		else if(timer.innerHTML>0) {timer.innerHTML-=1; window.setTimeout(countdown,1000);}
-		else alert("You lose:(\nPress F5 to play again.");
-}
 
 </script>
 
 <style type="text/css">
 	body{font-family: "Arial","微軟正黑體";}
 	.description{font-size: 20px; border: 1px dashed #eeee22;padding:5px;}
-	.game{font-size: 20px; padding: 10px;}
-	#btn{background-color: #ff0000; width:60px; height:40px;margin-left: 50px;color:#ffffff;}
-	#timer{font-size:25px;	color: #ff3300;}
-	#start{margin-left:10px;}
+	a{color="blue"; font-family:"Comic Sans MS";text-decoration: underline;}
+	a:hover{color:"red";}
 	@media screen and (max-width:600px){
 		.head{font-size:24px}
 		.content{width:100%;}
 	}
 </style>
-
 </head>
 
-<body onload="init();">
-	<h1>Find the message</h1>
-	<div class="description">Press the button in 5 seconds to find out the hidden message.</div>
-	
-	<div class="game">Hidden message：<span id="prgs"> </span> (<span id="prgsNum">0</span> character(s))</div>
-	<button id="btn">Press here</button>
-	<div class="game">Remaining time: <span id="timer">5</span> second(s).</div>
-	
+<body>
+	<h1>Homepage of ㄩㄊ at github</h1>
+	<div><a href="find the message.html">play Find the Message</a></div>
+	<div><a href="find the message v.HPBD.html">play Find the Message - birthday version</a>
 </body>
 </html>
